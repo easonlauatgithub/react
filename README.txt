@@ -1,4 +1,37 @@
 ------------------------------
+babel
+------------------------------
+npm install @babel/runtime --save-dev
+npm install @babel/core @babel/cli --save-dev
+npm install @babel/preset-env --save-dev
+npm install babel-loader --save-dev
+webpack.config.js
+----
+const path = require('path');
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist/'),
+  },
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
+  },  
+};
+----
+npm run buildprd
+
+------------------------------
 eslint 
 ------------------------------
 npm install eslint --save-dev

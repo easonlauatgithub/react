@@ -1,9 +1,3 @@
-import position from './position/lib.js';
-
-const profile = {
-  name: 'Easontesting',
-  // position: 'Front End Development',
-};
-console.log(`Hi! My name is ${profile.name}`);
-// console.log(`position is ${profile.position}`);
-console.log(`position is ${position}`);
+for (let i = 0; i <= 10; i += 1) {
+  console.log(i);
+}

@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("Hi! My name is Easontesting"),console.log("position is Front End Development")})();
+(()=>{for(var o=0;o<=10;o+=1)console.log(o)})();
