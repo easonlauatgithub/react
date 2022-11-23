@@ -1,4 +1,125 @@
 ------------------------------
+SASS
+------------------------------
+npm install node-sass
+index.scss
+----
+.main {
+    color: #aaf;
+
+    .point {
+        color: #faf;
+    }
+}
+----
+package.json
+----
+{
+  /* 其他省略 */
+  "scripts": {
+    "build-css": "node-sass src/index.scss src/index.css",
+  },
+  /* 其他省略 */
+}
+----
+npm run build-css
+//Webpack 編譯 JSX 的時候，一併將 SCSS 也編譯成 CSS 
+npm install style-loader css-loader sass-loader --save-dev
+npm install mini-css-extract-plugin --save-dev
+
+webpack.config.js
+----
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+----
+module: {
+  rules: [
+     /* 其餘省略（ JSX , JS loader 設定） */
+    {
+      test: /\.css$/,
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: { localIdentName: '[name]__[local]___[hash:base64:5]' },
+          },
+        },
+      ],
+    },
+  ]
+}
+----
+module.exports = {
+  /* 其餘省略 */
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: './index.css',
+    }),
+  ],
+};
+----
+module.exports = {
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, './dist/'),
+  },
+  /* 其餘省略 */
+}
+----
+
+ src/index.jsx
+----
+import styles from './index.css';
+----
+
+dist/index.html
+----
+    <head>
+        //...
+        <link rel="stylesheet" href="./index.css">
+    </head>
+----
+
+------------------------------
+SASS2
+------------------------------
+webpack.config.js
+----
+module.exports = {
+  /* 其餘省略 */
+  module: {
+    rules: [
+      {
+        test: /\.(scss)$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: { localIdentName: '[name]__[local]___[hash:base64:5]' },
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
+    ],
+  },
+};
+----
+
+ src/index.jsx
+----
+import styles from './index.scss';
+----
+
+
+------------------------------
 react
 ------------------------------
 npm install react --save
