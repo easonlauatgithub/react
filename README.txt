@@ -1,5 +1,5 @@
 ------------------------------
-eslint
+eslint 
 ------------------------------
 npm install eslint --save-dev
 // global
