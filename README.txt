@@ -1,4 +1,42 @@
 ------------------------------
+react
+------------------------------
+npm install react --save
+npm install react-dom --save
+npm install @babel/preset-react --save-dev
+webpack.config.js
+----
+module.exports = {
+  entry: './src/index.jsx',
+}
+----
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /.js$/,
+        use: {
+          //Webpack 在編譯時能夠設定 loader 使用 Babel
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
+        test: /.jsx$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-react', '@babel/preset-env'],
+          },
+        },
+      },      
+    ],
+  },
+----
+
+------------------------------
 babel
 ------------------------------
 npm install @babel/runtime --save-dev
