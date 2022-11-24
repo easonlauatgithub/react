@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 module.exports = {
   entry: './src/index.jsx',
   output: {
@@ -11,7 +12,7 @@ module.exports = {
       {
         test: /.js$/,
         use: {
-          //Webpack 在編譯時能夠設定 loader 使用 Babel
+          // Webpack 在編譯時能夠設定 loader 使用 Babel
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env'],
@@ -28,7 +29,7 @@ module.exports = {
         },
       },
       {
-        //test: /\.css$/,
+        // test: /\.css$/,
         test: /\.(scss)$/,
         use: [
           {
@@ -44,7 +45,7 @@ module.exports = {
             loader: 'sass-loader',
           },
         ],
-      },      
+      },
 
     ],
   },
@@ -57,7 +58,7 @@ module.exports = {
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
-    maxAssetSize: 512000
+    maxAssetSize: 512000,
   },
   devServer: {
     // contentBase: './dist',
