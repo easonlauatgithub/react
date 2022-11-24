@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactDom from 'react-dom';
 import styles from './index.scss';
+import Counter from './components/Counter.jsx';
 
 const Main = () => {
-    const [count, setCount] = useState(0);
+    const [hidden, setHidden] = useState(false);
     return (
         <>
-            <h1 className={styles.main}>
-                Hi {count}！
-            </h1>
             <button type="button" 
-                onClick={()=>{setCount(count+1);}}>
-                click
+                onClick={()=>{setHidden(!hidden);}}>
+                Toggle hidden
             </button>
+            {
+                hidden?null:<Counter />
+            }
         </>
     );
 };
