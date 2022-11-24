@@ -1,4 +1,52 @@
 ------------------------------
+Hot reload
+------------------------------
+npm install webpack-dev-server --save-dev
+
+webpack.config.js
+----
+module.exports = {
+    // ....
+  mode: 'production',
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
+  devServer: {
+    // contentBase: './dist',
+    static: './dist',
+    port: 8080,
+  },
+};
+----
+
+ package.json
+----
+"scripts": {
+  // ....
+    "start": "webpack-dev-server",
+    "start:dev3": "webpack-dev-server",
+    "start:dev4": "webpack serve",
+},
+----
+npm run start
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------
 SASS
 ------------------------------
 npm install node-sass

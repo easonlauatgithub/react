@@ -52,5 +52,16 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: './index.css',
     }),
-  ],  
+  ],
+  mode: 'production',
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
+  devServer: {
+    // contentBase: './dist',
+    static: './dist',
+    port: 8080,
+  },
 };
