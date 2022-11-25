@@ -1,4 +1,11 @@
 ------------------------------
+Prop-types
+------------------------------
+npm install --save prop-types
+
+
+
+------------------------------
 Hot reload
 ------------------------------
 npm install webpack-dev-server --save-dev
@@ -31,20 +38,6 @@ module.exports = {
 },
 ----
 npm run start
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ------------------------------
 SASS
