@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ReactDom from 'react-dom';
-import styles from '../index.scss';
 import PropTypes from 'prop-types';
 
 const Task = (props) => {
