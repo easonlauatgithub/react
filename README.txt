@@ -2,6 +2,7 @@
 Redux
 ------------------------------
 npm install --save redux react-redux
+npm i --save redux-logger
 
 ------------------------------
 Prop-types
