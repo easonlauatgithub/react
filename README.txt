@@ -1,8 +1,46 @@
 ------------------------------
+Redux - redux-saga async
+------------------------------
+npm install --save redux-saga
+----
+npm install --save @babel/polyfill // @babel/polyfill handles Generator Function
+----
+function printNumber() {
+  for (let i = 0; i <= 10; i += 1) {
+    console.log(i);
+  }
+}
+printNumber() // 0 1 2 3 ... 10
+----
+function* printNumber() {
+  for (let i = 0; i <= 10; i += 1) {
+    yield console.log(i);
+  }
+}
+const iteratorA = printNumber(); // 將 printNumber 的執行交給
+// 接著每一次執行 .next() 都會到 Generator Function 中的 yield，然後停住
+iteratorA.next() // 0
+// 下一次執行 .next() 時又會執行到 yield，然後停住
+iteratorA.next() // 1
+// 依此類推，一直到 10
+iteratorA.next() // 10
+// 再來就沒有了
+iteratorA.next()
+----
+module.exports = {
+  entry: ['@babel/polyfill', './src/index.jsx'],
+  //...
+----  
+
+------------------------------
+Redux - applyMiddleWare
+------------------------------
+npm i --save redux-logger
+
+------------------------------
 Redux
 ------------------------------
 npm install --save redux react-redux
-npm i --save redux-logger
 
 ------------------------------
 Prop-types
