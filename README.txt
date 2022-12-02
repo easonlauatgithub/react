@@ -1,4 +1,18 @@
 ------------------------------
+SPA - Router
+------------------------------
+npm i react-router-dom@5.0.1 --save
+
+webpack.config.js
+----
+module.exports = {
+  // ...
+  // default import js only, added resolve to import jsx
+  resolve: { extensions: ['.js', '.jsx'] },
+}
+----
+
+------------------------------
 Redux - redux-saga async
 ------------------------------
 npm install --save redux-saga

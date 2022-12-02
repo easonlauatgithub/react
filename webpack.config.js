@@ -65,4 +65,6 @@ module.exports = {
     static: './dist',
     port: 8080,
   },
+  // default import js only, added resolve to import jsx
+  resolve: { extensions: ['.js', '.jsx'] },  
 };

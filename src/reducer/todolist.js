@@ -2,7 +2,7 @@ import * as actions from '../action/todolist';
 
 const initState = {
     todoList: ['firstThing','secondThing'],
-    data: {},
+    data: '',
 }
 
 const todoReducer = (state = initState, action)=>{
