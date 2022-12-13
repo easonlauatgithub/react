@@ -1,4 +1,57 @@
 ------------------------------
+Jest
+------------------------------
+npm install jest --save-dev
+
+/__tests__/index.test.js
+----
+import { add, sub } from '../src/utils/math';
+
+describe('Check add', () => {
+    beforeEach(() => {
+        console.log('每次執行測試前執行哦');
+    });
+    
+    afterAll(() => {
+        console.log('所有測試結束後才看得見我');
+    });
+
+    test('Check the result of 5 + 2', () => {
+        expect(5 + 2).not.toBe(8);
+    });
+    
+    test('Check the result of 5 + 3', () => {
+        expect(5 + 3).toBe(8);
+    });
+
+  });
+  
+  describe('Check sub', () => {
+    test('Check the result of sub(5,2)', () => {
+      expect(sub(5,2)).not.toBe(1);
+    });
+  
+    test('Check the result of sub(5,3)', () => {
+      expect(sub(5,3)).toBe(2);
+    });
+  });
+----
+
+/utils/math.js
+----
+export const add = (a, b) => a + b;
+
+export const sub = (a, b) => a - b;
+----
+
+.babelrc.js
+----
+module.exports = {
+    presets: ['@babel/preset-env'],
+};
+----
+
+------------------------------
 SPA - Router
 ------------------------------
 npm i react-router-dom@5.0.1 --save
