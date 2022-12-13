@@ -52,6 +52,7 @@
     "react-router-dom": "^5.0.1",
     "redux": "^4.2.0",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^1.2.1"
+    "redux-saga": "^1.2.1",
+    "uuid": "^3.3.3"
   }
 }
