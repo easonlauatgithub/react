@@ -1,10 +1,18 @@
 ------------------------------
-Mock
+Testing - component Counter
+------------------------------
+npm install --save-dev @testing-library/react@9.1.4
+npm install @testing-library/jest-dom@4.1.0 --save-dev
+// jest ^29.3.1 > 28
+npm i jest-environment-jsdom --save-dev
+
+------------------------------
+Testing - Mock
 ------------------------------
 npm install uuid@3.3.3 --save
 
 ------------------------------
-Jest
+Testing - Jest
 ------------------------------
 npm install jest --save-dev
 
